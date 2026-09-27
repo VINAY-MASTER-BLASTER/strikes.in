@@ -1,0 +1,75 @@
+.sale-discovery {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5) var(--space-6);
+  position: relative;
+}
+
+.sale-discovery__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(124, 106, 255, 0.06);
+  border: 1px solid rgba(124, 106, 255, 0.15);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-smooth),
+              border-color var(--duration-base) var(--ease-smooth),
+              transform var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-base) var(--ease-smooth);
+  position: relative;
+  min-height: 44px;
+  font-family: inherit;
+  color: inherit;
+}
+
+.sale-discovery__badge:hover {
+  background: rgba(124, 106, 255, 0.12);
+  border-color: rgba(124, 106, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(124, 106, 255, 0.2);
+}
+
+.sale-discovery__badge--active {
+  background: rgba(124, 106, 255, 0.15);
+  border-color: rgba(124, 106, 255, 0.4);
+}
+
+.sale-discovery__pulse {
+  position: absolute;
+  left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: discoveryPulse 2s ease-in-out infinite;
+}
+
+@keyframes discoveryPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 106, 255, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(124, 106, 255, 0); }
+}
+
+.sale-discovery__dot {
+  font-size: 1rem;
+  margin-left: var(--space-3);
+  animation: dotGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes dotGlow {
+  0% { filter: drop-shadow(0 0 3px var(--color-primary)); }
+  100% { filter: drop-shadow(0 0 14px var(--color-primary)); }
+}
+
+.sale-discovery__text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: 0.3px;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.sale-discovery__badge:hover .sale-discovery__text {
+  color: var(--color-text);
+}
