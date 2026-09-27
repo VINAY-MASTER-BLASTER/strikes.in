@@ -1,0 +1,96 @@
+.coupon__code-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.coupon__code {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(124, 106, 255, 0.08);
+  border: 1px dashed rgba(124, 106, 255, 0.35);
+  border-radius: var(--radius-sm);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.coupon__copy {
+  padding: var(--space-3) var(--space-5);
+  background: linear-gradient(135deg, var(--color-primary), #9333ea);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-smooth),
+              box-shadow var(--duration-fast) var(--ease-smooth);
+  white-space: nowrap;
+  min-height: 44px;
+  min-width: 120px;
+  font-family: inherit;
+}
+
+.coupon__copy:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(124, 106, 255, 0.4);
+}
+
+.coupon__copy:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.coupon__copy--copied {
+  background: var(--color-success) !important;
+}
+
+.coupon__copy:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: var(--color-muted);
+}
+
+.coupon__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.coupon__shop {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  border: 1px solid rgba(124, 106, 255, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-light);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  min-height: 44px;
+}
+
+.coupon__shop:hover:not(.coupon__shop--disabled) {
+  background: rgba(124, 106, 255, 0.08);
+  border-color: var(--color-primary);
+}
+
+.coupon__shop--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .coupon__code-row { flex-direction: column; }
+  .coupon__code { width: 100%; }
+  .coupon__copy { width: 100%; }
+  .coupon__shop { width: 100%; justify-content: center; }
+}
