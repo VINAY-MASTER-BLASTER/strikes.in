@@ -1,0 +1,25 @@
+.expired {
+  text-align: center;
+  padding: var(--space-5) 0;
+}
+
+.expired__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  opacity: 0.6;
+}
+
+.expired__title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-error);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.expired__text {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
