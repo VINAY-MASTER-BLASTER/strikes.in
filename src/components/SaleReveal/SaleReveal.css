@@ -1,0 +1,149 @@
+.sale-reveal {
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+.sale-reveal__panel {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid rgba(124, 106, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow:
+    0 0 0 1px rgba(124, 106, 255, 0.08),
+    0 20px 60px rgba(124, 106, 255, 0.12),
+    0 0 100px rgba(124, 106, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+.sale-reveal--animate .sale-reveal__panel {
+  animation: revealEntry 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes revealEntry {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.sale-reveal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  min-width: 44px;
+  min-height: 44px;
+  font-family: inherit;
+}
+
+.sale-reveal__close:hover {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.3);
+  color: var(--color-error);
+}
+
+.sale-reveal__header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.sale-reveal__label {
+  display: inline-block;
+  padding: var(--space-1) var(--space-4);
+  background: rgba(124, 106, 255, 0.1);
+  border: 1px solid rgba(124, 106, 255, 0.2);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.sale-reveal__discount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.sale-reveal__discount-value {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.sale-reveal__discount-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.sale-reveal__product {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.sale-reveal__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sale-reveal__timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sale-reveal__expires-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 480px) {
+  .sale-reveal__panel {
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+  }
+  .sale-reveal {
+    padding: 0 var(--space-4) var(--space-4);
+  }
+}
